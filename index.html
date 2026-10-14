@@ -1,23 +1,30 @@
 <!DOCTYPE html>
 <html lang="id">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SOUNDGATE | Platform Jual Beli Tiket Konser Lokal & Internasional Resmi</title>
-    <meta name="description" content="Platform resmi jual beli tiket konser lokal dan internasional. Dilengkapi e-ticket QR Code anti-pemalsuan, payment gateway real-time, dashboard promotor & admin, dan sistem verifikasi gerbang stadion.">
-    <meta name="keywords" content="tiket konser, jual beli tiket, tiket coldplay, sheila on 7, bruno mars, e-ticket qr code, tiket resmi, promotor konser">
+    <meta name="description"
+        content="Platform resmi jual beli tiket konser lokal dan internasional. Dilengkapi e-ticket QR Code anti-pemalsuan, payment gateway real-time, dashboard promotor & admin, dan sistem verifikasi gerbang stadion.">
+    <meta name="keywords"
+        content="tiket konser, jual beli tiket, tiket coldplay, sheila on 7, bruno mars, e-ticket qr code, tiket resmi, promotor konser">
 
     <!-- Favicon -->
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 rx=%2222%22 fill=%22%238B5CF6%22/><text y=%2268%22 x=%2250%22 text-anchor=%22middle%22 font-size=%2255%22 font-family=%22sans-serif%22 font-weight=%22900%22 fill=%22white%22>⚡</text></svg>">
+    <link rel="icon"
+        href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 rx=%2222%22 fill=%22%238B5CF6%22/><text y=%2268%22 x=%2250%22 text-anchor=%22middle%22 font-size=%2255%22 font-family=%22sans-serif%22 font-weight=%22900%22 fill=%22white%22>⚡</text></svg>">
 
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@500;700;800&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@500;700;800&display=swap"
+        rel="stylesheet">
 
     <!-- Main Stylesheet -->
     <link rel="stylesheet" href="css/styles.css">
 </head>
+
 <body>
 
     <!-- ==========================================================================
@@ -29,10 +36,13 @@
                 <span class="disclaimer-icon">⚠️</span>
                 <span class="disclaimer-badge">DISCLAIMER RESMI</span>
                 <span class="disclaimer-text">
-                    <strong>Pemberitahuan:</strong> Tanggal, nama acara, dan harga pada katalog saat ini merupakan <strong>data contoh</strong>, bukan penawaran tiket yang sudah diverifikasi.
+                    <strong>Pemberitahuan:</strong> Tanggal, nama acara, dan harga pada katalog saat ini merupakan
+                    <strong>data contoh</strong>, bukan penawaran tiket yang sudah diverifikasi.
                 </span>
             </div>
-            <button class="disclaimer-close-btn" onclick="document.getElementById('disclaimer-banner').style.display='none'" title="Tutup Pemberitahuan" aria-label="Tutup Banner">×</button>
+            <button class="disclaimer-close-btn"
+                onclick="document.getElementById('disclaimer-banner').style.display='none'" title="Tutup Pemberitahuan"
+                aria-label="Tutup Banner">×</button>
         </div>
     </aside>
 
@@ -59,7 +69,8 @@
                 <span class="active-account-badge" id="active-user-badge">
                     👤 <strong>Budi Santoso</strong> (Pembeli)
                 </span>
-                <button class="btn-reset-db" onclick="handleResetDatabase()" title="Kembalikan semua data ke pengaturan awal">
+                <button class="btn-reset-db" onclick="handleResetDatabase()"
+                    title="Kembalikan semua data ke pengaturan awal">
                     🔄 Reset Data
                 </button>
             </div>
@@ -71,7 +82,8 @@
        ========================================================================== -->
     <header class="main-header">
         <div class="nav-container">
-            <a href="javascript:void(0)" onclick="switchView('catalog')" class="brand-logo" aria-label="SoundGate Beranda">
+            <a href="javascript:void(0)" onclick="switchView('catalog')" class="brand-logo"
+                aria-label="SoundGate Beranda">
                 <div class="logo-icon">⚡</div>
                 <div class="brand-text">
                     <h1>SOUNDGATE</h1>
@@ -87,15 +99,23 @@
                 <button class="nav-tab-btn" data-view="mytickets" onclick="switchView('mytickets')">
                     🎟️ Tiket Saya
                 </button>
-                <button class="nav-tab-btn" id="nav-tab-dashboard" data-view="dashboard" onclick="switchView('dashboard')" style="display: none;">
+                <button class="nav-tab-btn" id="nav-tab-dashboard" data-view="dashboard"
+                    onclick="switchView('dashboard')" style="display: none;">
                     📊 Dashboard Promotor
                 </button>
             </nav>
 
             <!-- Right Actions -->
             <div class="header-actions">
-                <button class="btn-scanner-gate" onclick="openScannerGateModal()" title="Buka Gerbang Pemindaian Tiket Stadion">
-                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="3" y="3" width="7" height="7"></rect><rect x="14" y="3" width="7" height="7"></rect><rect x="14" y="14" width="7" height="7"></rect><rect x="3" y="14" width="7" height="7"></rect></svg>
+                <button class="btn-scanner-gate" onclick="openScannerGateModal()"
+                    title="Buka Gerbang Pemindaian Tiket Stadion">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                        stroke-width="2.5">
+                        <rect x="3" y="3" width="7" height="7"></rect>
+                        <rect x="14" y="3" width="7" height="7"></rect>
+                        <rect x="14" y="14" width="7" height="7"></rect>
+                        <rect x="3" y="14" width="7" height="7"></rect>
+                    </svg>
                     <span>Verifikasi Gerbang (Gate Scanner)</span>
                 </button>
 
@@ -128,14 +148,22 @@
                             <span class="gradient-text">Lokal & Internasional</span> Resmi
                         </h2>
                         <p class="hero-description">
-                            Jual beli tiket konser dengan jaminan 100% tiket asli, sistem enkripsi QR Code berstandar stadion internasional, pembayaran langsung real-time, dan teknologi verifikasi gerbang anti-tiket palsu & anti-calo.
+                            Jual beli tiket konser dengan jaminan 100% tiket asli, sistem enkripsi QR Code berstandar
+                            stadion internasional, pembayaran langsung real-time, dan teknologi verifikasi gerbang
+                            anti-tiket palsu & anti-calo.
                         </p>
 
                         <!-- Search & Live Filter Bar -->
                         <div class="search-control-wrapper">
                             <div class="search-input-group">
-                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
-                                <input type="text" id="catalog-search-input" placeholder="Cari nama artis, judul konser, kota (Jakarta, Bandung, Singapore), atau venue..." autocomplete="off">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2.5">
+                                    <circle cx="11" cy="11" r="8"></circle>
+                                    <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                                </svg>
+                                <input type="text" id="catalog-search-input"
+                                    placeholder="Cari nama artis, judul konser, kota (Jakarta, Bandung, Singapore), atau venue..."
+                                    autocomplete="off">
                             </div>
                         </div>
 
@@ -161,7 +189,8 @@
                     <div class="section-header-row">
                         <div class="section-title-wrap">
                             <h2>Katalog Konser Resmi</h2>
-                            <p>Pilih konser favorit Anda dan amankan tiket langsung dari promotor resmi terverifikasi</p>
+                            <p>Pilih konser favorit Anda dan amankan tiket langsung dari promotor resmi terverifikasi
+                            </p>
                         </div>
                         <span class="catalog-stats-badge" id="catalog-stats-badge">Memuat data konser...</span>
                     </div>
@@ -182,7 +211,8 @@
                 <div class="section-header-row">
                     <div class="section-title-wrap">
                         <h2>Tiket Saya</h2>
-                        <p>Daftar digital E-Ticket konser yang telah Anda beli. Siap digunakan di gerbang masuk stadion.</p>
+                        <p>Daftar digital E-Ticket konser yang telah Anda beli. Siap digunakan di gerbang masuk stadion.
+                        </p>
                     </div>
                 </div>
                 <div id="mytickets-view-mount">
@@ -206,7 +236,8 @@
        ========================================================================== -->
     <div class="modal-overlay" id="modal-tier-select" role="dialog" aria-modal="true">
         <div class="modal-container">
-            <button class="modal-close-btn" onclick="closeModal('modal-tier-select')" aria-label="Tutup Dialog">×</button>
+            <button class="modal-close-btn" onclick="closeModal('modal-tier-select')"
+                aria-label="Tutup Dialog">×</button>
             <div class="modal-scrollable-body">
                 <div class="modal-event-header" id="modal-event-header-content">
                     <!-- Populated by app.js -->
@@ -219,7 +250,8 @@
 
                 <div class="checkout-control-strip">
                     <div class="quantity-stepper">
-                        <span style="font-size: 0.85rem; color: var(--text-secondary); margin-right: 6px;">Jumlah Tiket:</span>
+                        <span style="font-size: 0.85rem; color: var(--text-secondary); margin-right: 6px;">Jumlah
+                            Tiket:</span>
                         <button class="step-btn" onclick="adjustQuantity(-1)" aria-label="Kurangi Tiket">-</button>
                         <span class="quantity-display" id="tier-qty-display">1</span>
                         <button class="step-btn" onclick="adjustQuantity(1)" aria-label="Tambah Tiket">+</button>
@@ -245,7 +277,8 @@
        ========================================================================== -->
     <div class="modal-overlay" id="modal-payment-gateway" role="dialog" aria-modal="true">
         <div class="modal-container payment-modal-container">
-            <button class="modal-close-btn" onclick="closeModal('modal-payment-gateway')" aria-label="Tutup Dialog">×</button>
+            <button class="modal-close-btn" onclick="closeModal('modal-payment-gateway')"
+                aria-label="Tutup Dialog">×</button>
             <div class="modal-scrollable-body">
                 <div class="payment-steps-indicator">
                     <div class="pay-step active">
@@ -266,7 +299,8 @@
                 <div id="payment-order-brief"></div>
 
                 <!-- Attendee Identity Form -->
-                <h4 style="font-size: 1rem; color: #fff; margin-bottom: 12px;">Data Pemegang Tiket (Sesuai KTP / Paspor)</h4>
+                <h4 style="font-size: 1rem; color: #fff; margin-bottom: 12px;">Data Pemegang Tiket (Sesuai KTP / Paspor)
+                </h4>
                 <div class="attendee-form-grid">
                     <div>
                         <label class="form-label" for="pay-name">Nama Lengkap Penonton *</label>
@@ -340,7 +374,8 @@
        ========================================================================== -->
     <div class="modal-overlay" id="modal-scanner-gate" role="dialog" aria-modal="true">
         <div class="modal-container scanner-gate-modal">
-            <button class="modal-close-btn" onclick="closeModal('modal-scanner-gate')" aria-label="Tutup Dialog">×</button>
+            <button class="modal-close-btn" onclick="closeModal('modal-scanner-gate')"
+                aria-label="Tutup Dialog">×</button>
             <div class="scanner-hud-container">
                 <div class="scanner-hud-header">
                     <div class="scanner-hud-title">
@@ -348,7 +383,8 @@
                         <span>SOUNDGATE STADIUM ACCESS CONTROL HUD</span>
                     </div>
                     <div>
-                        <select id="scanner-gate-select" class="custom-select" style="font-size: 0.8rem; padding: 6px 12px;">
+                        <select id="scanner-gate-select" class="custom-select"
+                            style="font-size: 0.8rem; padding: 6px 12px;">
                             <option value="GATE 1 (VIP & VVIP ENTRANCE)">Gate 1 (VIP & VVIP)</option>
                             <option value="GATE 2 (FESTIVAL STANDING)">Gate 2 (Festival Field)</option>
                             <option value="GATE 3 (TRIBUNE BARAT)">Gate 3 (Tribune Barat)</option>
@@ -363,14 +399,17 @@
                         <div class="scanner-camera-viewport">
                             <div class="laser-scanner-line"></div>
                             <div class="camera-crosshairs"></div>
-                            <div style="position: absolute; bottom: 12px; font-size: 0.75rem; color: #34D399; font-weight: 600; text-shadow: 0 1px 4px #000;">
+                            <div
+                                style="position: absolute; bottom: 12px; font-size: 0.75rem; color: #34D399; font-weight: 600; text-shadow: 0 1px 4px #000;">
                                 SCANNER AKTIF • KAMERA & BARCODE DETECTOR
                             </div>
                         </div>
 
                         <!-- Manual Ticket Code Input -->
                         <div style="margin-top: 14px; display: flex; gap: 8px;">
-                            <input type="text" id="scanner-input-code" class="form-input" placeholder="Ketik kode tiket (misal: TKT-CP-99812A)..." style="font-family: monospace; font-size: 0.95rem;">
+                            <input type="text" id="scanner-input-code" class="form-input"
+                                placeholder="Ketik kode tiket (misal: TKT-CP-99812A)..."
+                                style="font-family: monospace; font-size: 0.95rem;">
                             <button class="btn-book-ticket" onclick="handleManualVerify()" style="white-space: nowrap;">
                                 Verifikasi
                             </button>
@@ -378,8 +417,10 @@
 
                         <!-- Quick Test Dropdown for Easy Evaluation -->
                         <div class="quick-test-section">
-                            <label class="quick-test-label" for="quick-ticket-select">⚡ Uji Cepat Tiket dalam Database:</label>
-                            <select id="quick-ticket-select" class="custom-select" style="width: 100%; font-size: 0.8rem;" onchange="handleQuickSelectVerify(this.value)">
+                            <label class="quick-test-label" for="quick-ticket-select">⚡ Uji Cepat Tiket dalam
+                                Database:</label>
+                            <select id="quick-ticket-select" class="custom-select"
+                                style="width: 100%; font-size: 0.8rem;" onchange="handleQuickSelectVerify(this.value)">
                                 <!-- Populated dynamically -->
                             </select>
                         </div>
@@ -390,7 +431,8 @@
                         <div class="verification-result-panel status-standby" id="scanner-result-screen">
                             <div class="result-status-icon">📡</div>
                             <h4 class="result-status-title">MENUNGGU SCAN TIKET</h4>
-                            <p class="result-status-desc">Arahkan QR Code tiket ke kamera scanner atau pilih tiket uji coba di sebelah kiri.</p>
+                            <p class="result-status-desc">Arahkan QR Code tiket ke kamera scanner atau pilih tiket uji
+                                coba di sebelah kiri.</p>
                         </div>
                     </div>
                 </div>
@@ -424,20 +466,25 @@
        ========================================================================== -->
     <div class="modal-overlay" id="modal-add-concert" role="dialog" aria-modal="true">
         <div class="modal-container" style="max-width: 680px;">
-            <button class="modal-close-btn" onclick="closeModal('modal-add-concert')" aria-label="Tutup Dialog">×</button>
+            <button class="modal-close-btn" onclick="closeModal('modal-add-concert')"
+                aria-label="Tutup Dialog">×</button>
             <div class="modal-scrollable-body">
-                <h3 style="font-family: var(--font-heading); font-size: 1.5rem; margin-bottom: 6px;">Tambah Konser Baru</h3>
-                <p style="color: var(--text-secondary); font-size: 0.88rem; margin-bottom: 20px;">Daftarkan konser musik baru ke katalog resmi SoundGate.</p>
+                <h3 style="font-family: var(--font-heading); font-size: 1.5rem; margin-bottom: 6px;">Tambah Konser Baru
+                </h3>
+                <p style="color: var(--text-secondary); font-size: 0.88rem; margin-bottom: 20px;">Daftarkan konser musik
+                    baru ke katalog resmi SoundGate.</p>
 
                 <form id="form-add-concert">
                     <div class="attendee-form-grid">
                         <div class="form-group-full">
                             <label class="form-label" for="add-concert-title">Judul Acara Konser *</label>
-                            <input type="text" id="add-concert-title" class="form-input" placeholder="Contoh: Sheila on 7 Tunggu Aku di Surabaya" required>
+                            <input type="text" id="add-concert-title" class="form-input"
+                                placeholder="Contoh: Sheila on 7 Tunggu Aku di Surabaya" required>
                         </div>
                         <div>
                             <label class="form-label" for="add-concert-artist">Nama Artis / Band *</label>
-                            <input type="text" id="add-concert-artist" class="form-input" placeholder="Contoh: Sheila on 7" required>
+                            <input type="text" id="add-concert-artist" class="form-input"
+                                placeholder="Contoh: Sheila on 7" required>
                         </div>
                         <div>
                             <label class="form-label" for="add-concert-category">Kategori Konser *</label>
@@ -448,11 +495,13 @@
                         </div>
                         <div>
                             <label class="form-label" for="add-concert-city">Kota Penyelenggaraan *</label>
-                            <input type="text" id="add-concert-city" class="form-input" placeholder="Jakarta / Surabaya / Bandung" required>
+                            <input type="text" id="add-concert-city" class="form-input"
+                                placeholder="Jakarta / Surabaya / Bandung" required>
                         </div>
                         <div>
                             <label class="form-label" for="add-concert-venue">Nama Gedung / Stadion (Venue) *</label>
-                            <input type="text" id="add-concert-venue" class="form-input" placeholder="Gelora Bung Karno" required>
+                            <input type="text" id="add-concert-venue" class="form-input" placeholder="Gelora Bung Karno"
+                                required>
                         </div>
                         <div>
                             <label class="form-label" for="add-concert-date">Tanggal Acara *</label>
@@ -460,19 +509,23 @@
                         </div>
                         <div>
                             <label class="form-label" for="add-concert-time">Jam Pintu Dibuka *</label>
-                            <input type="text" id="add-concert-time" class="form-input" placeholder="19:00 WIB" required>
+                            <input type="text" id="add-concert-time" class="form-input" placeholder="19:00 WIB"
+                                required>
                         </div>
                         <div class="form-group-full">
                             <label class="form-label" for="add-concert-genre">Genre Musik</label>
-                            <input type="text" id="add-concert-genre" class="form-input" placeholder="Pop / Rock / Indie">
+                            <input type="text" id="add-concert-genre" class="form-input"
+                                placeholder="Pop / Rock / Indie">
                         </div>
                         <div class="form-group-full">
                             <label class="form-label" for="add-concert-desc">Deskripsi Konser</label>
-                            <textarea id="add-concert-desc" class="form-input" rows="3" placeholder="Informasi singkat tentang konser..."></textarea>
+                            <textarea id="add-concert-desc" class="form-input" rows="3"
+                                placeholder="Informasi singkat tentang konser..."></textarea>
                         </div>
                     </div>
 
-                    <h4 style="font-size: 0.95rem; margin: 16px 0 10px; color: #fff;">Pengaturan Kategori & Kuota Tiket:</h4>
+                    <h4 style="font-size: 0.95rem; margin: 16px 0 10px; color: #fff;">Pengaturan Kategori & Kuota Tiket:
+                    </h4>
                     <div class="attendee-form-grid" style="margin-bottom: 20px;">
                         <div>
                             <label class="form-label">Harga Kategori VIP (Rp)</label>
@@ -508,18 +561,24 @@
             <button class="modal-close-btn" onclick="closeModal('modal-auth')" aria-label="Tutup Dialog">×</button>
             <div class="modal-scrollable-body">
                 <h3 style="font-family: var(--font-heading); font-size: 1.5rem; margin-bottom: 6px;">Akun SoundGate</h3>
-                <p style="color: var(--text-secondary); font-size: 0.85rem; margin-bottom: 20px;">Masuk atau pilih profil evaluasi Anda.</p>
+                <p style="color: var(--text-secondary); font-size: 0.85rem; margin-bottom: 20px;">Masuk atau pilih
+                    profil evaluasi Anda.</p>
 
-                <div style="background: rgba(255,255,255,0.03); border: 1px solid var(--border-glass); border-radius: var(--radius-md); padding: 16px; margin-bottom: 20px;">
-                    <div style="font-size: 0.8rem; color: var(--text-muted); margin-bottom: 8px;">PILIH AKUN EVALUASI CEPAT:</div>
+                <div
+                    style="background: rgba(255,255,255,0.03); border: 1px solid var(--border-glass); border-radius: var(--radius-md); padding: 16px; margin-bottom: 20px;">
+                    <div style="font-size: 0.8rem; color: var(--text-muted); margin-bottom: 8px;">PILIH AKUN EVALUASI
+                        CEPAT:</div>
                     <div style="display: flex; flex-direction: column; gap: 8px;">
-                        <button class="demo-role-btn" onclick="switchDemoRole('buyer'); closeModal('modal-auth');" style="justify-content: flex-start; padding: 10px 14px;">
+                        <button class="demo-role-btn" onclick="switchDemoRole('buyer'); closeModal('modal-auth');"
+                            style="justify-content: flex-start; padding: 10px 14px;">
                             🛒 <strong>Budi Santoso</strong> (Pembeli - budi@gmail.com)
                         </button>
-                        <button class="demo-role-btn" onclick="switchDemoRole('seller'); closeModal('modal-auth');" style="justify-content: flex-start; padding: 10px 14px;">
+                        <button class="demo-role-btn" onclick="switchDemoRole('seller'); closeModal('modal-auth');"
+                            style="justify-content: flex-start; padding: 10px 14px;">
                             🎪 <strong>PK Entertainment</strong> (Promotor - promotor@pkentertainment.id)
                         </button>
-                        <button class="demo-role-btn" onclick="switchDemoRole('admin'); closeModal('modal-auth');" style="justify-content: flex-start; padding: 10px 14px;">
+                        <button class="demo-role-btn" onclick="switchDemoRole('admin'); closeModal('modal-auth');"
+                            style="justify-content: flex-start; padding: 10px 14px;">
                             🛡️ <strong>Super Admin</strong> (admin@soundgate.id)
                         </button>
                     </div>
@@ -541,13 +600,16 @@
                 <div class="brand-logo" style="margin-bottom: 14px;">
                     <div class="logo-icon">⚡</div>
                     <div class="brand-text">
-                        <span style="font-family: var(--font-heading); font-size: 1.3rem; font-weight: 800; color: #fff;">SOUNDGATE</span>
+                        <span
+                            style="font-family: var(--font-heading); font-size: 1.3rem; font-weight: 800; color: #fff;">SOUNDGATE</span>
                     </div>
                 </div>
                 <p style="font-size: 0.88rem; line-height: 1.6; margin-bottom: 14px;">
-                    Platform digital jual beli tiket konser resmi pertama dengan perlindungan anti-tiket palsu, QR code terenkripsi dinamis, dan integrasi gerbang stadion langsung.
+                    Platform digital jual beli tiket konser resmi pertama dengan perlindungan anti-tiket palsu, QR code
+                    terenkripsi dinamis, dan integrasi gerbang stadion langsung.
                 </p>
-                <div style="font-size: 0.78rem; color: #FBBF24; background: rgba(245, 158, 11, 0.1); border: 1px solid rgba(245, 158, 11, 0.3); padding: 8px 12px; border-radius: var(--radius-sm);">
+                <div
+                    style="font-size: 0.78rem; color: #FBBF24; background: rgba(245, 158, 11, 0.1); border: 1px solid rgba(245, 158, 11, 0.3); padding: 8px 12px; border-radius: var(--radius-sm);">
                     ⚠️ Catatan: Data konser dan harga pada katalog merupakan data contoh.
                 </div>
             </div>
@@ -555,9 +617,15 @@
             <div class="footer-col">
                 <h4>Kategori Konser</h4>
                 <ul>
-                    <li><a href="javascript:void(0)" onclick="state.currentCategory='internasional'; renderConcertCatalog(); switchView('catalog');">Konser Internasional</a></li>
-                    <li><a href="javascript:void(0)" onclick="state.currentCategory='lokal'; renderConcertCatalog(); switchView('catalog');">Konser Lokal Indonesia</a></li>
-                    <li><a href="javascript:void(0)" onclick="state.currentCategory='all'; renderConcertCatalog(); switchView('catalog');">Semua Festival Musik</a></li>
+                    <li><a href="javascript:void(0)"
+                            onclick="state.currentCategory='internasional'; renderConcertCatalog(); switchView('catalog');">Konser
+                            Internasional</a></li>
+                    <li><a href="javascript:void(0)"
+                            onclick="state.currentCategory='lokal'; renderConcertCatalog(); switchView('catalog');">Konser
+                            Lokal Indonesia</a></li>
+                    <li><a href="javascript:void(0)"
+                            onclick="state.currentCategory='all'; renderConcertCatalog(); switchView('catalog');">Semua
+                            Festival Musik</a></li>
                 </ul>
             </div>
 
@@ -565,17 +633,24 @@
                 <h4>Fitur Platform</h4>
                 <ul>
                     <li><a href="javascript:void(0)" onclick="openScannerGateModal()">Gerbang Verifikasi Tiket</a></li>
-                    <li><a href="javascript:void(0)" onclick="switchView('mytickets')">Digital E-Ticket & QR Code</a></li>
-                    <li><a href="javascript:void(0)" onclick="switchDemoRole('seller'); switchView('dashboard');">Portal Promotor & Penjual</a></li>
-                    <li><a href="javascript:void(0)" onclick="switchDemoRole('admin'); switchView('dashboard');">Dashboard Super Admin</a></li>
+                    <li><a href="javascript:void(0)" onclick="switchView('mytickets')">Digital E-Ticket & QR Code</a>
+                    </li>
+                    <li><a href="javascript:void(0)" onclick="switchDemoRole('seller'); switchView('dashboard');">Portal
+                            Promotor & Penjual</a></li>
+                    <li><a href="javascript:void(0)"
+                            onclick="switchDemoRole('admin'); switchView('dashboard');">Dashboard Super Admin</a></li>
                 </ul>
             </div>
 
             <div class="footer-col">
                 <h4>Dukungan & Keamanan</h4>
                 <ul>
-                    <li><a href="javascript:void(0)" onclick="showToast('Customer service aktif 24/7 di cs@soundgate.id', 'info')">Pusat Bantuan 24/7</a></li>
-                    <li><a href="javascript:void(0)" onclick="showToast('Garansi 100% uang kembali jika tiket tidak valid di gate stadion.', 'info')">Garansi Tiket Resmi</a></li>
+                    <li><a href="javascript:void(0)"
+                            onclick="showToast('Customer service aktif 24/7 di cs@soundgate.id', 'info')">Pusat Bantuan
+                            24/7</a></li>
+                    <li><a href="javascript:void(0)"
+                            onclick="showToast('Garansi 100% uang kembali jika tiket tidak valid di gate stadion.', 'info')">Garansi
+                            Tiket Resmi</a></li>
                     <li><a href="javascript:void(0)" onclick="handleResetDatabase()">Reset Database Contoh</a></li>
                 </ul>
             </div>
@@ -598,4 +673,5 @@
     <script src="js/scanner.js"></script>
     <script src="js/app.js"></script>
 </body>
+
 </html>
