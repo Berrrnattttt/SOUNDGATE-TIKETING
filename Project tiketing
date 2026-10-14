@@ -1,0 +1,130 @@
+================================================================================
+SOUNDGATE - PLATFORM JUAL BELI TIKET KONSER LOKAL DAN INTERNASIONAL
+================================================================================
+
+PEMBERITAHUAN RESMI (DISCLAIMER):
+"Tanggal, nama acara, dan harga pada katalog saat ini merupakan data contoh,
+bukan penawaran tiket yang sudah diverifikasi."
+
+--------------------------------------------------------------------------------
+1. DESKRIPSI SISTEM
+--------------------------------------------------------------------------------
+SoundGate adalah platform web modern untuk jual beli tiket konser musik lokal
+(Indonesia) dan internasional (global). Platform ini dilengkapi sistem keamanan
+tiket digital berstandar stadion internasional, checkout payment gateway interaktif,
+portal dashboard bagi penjual (promotor) & admin, serta sistem verifikasi gerbang
+(Gate Scanner) untuk memutus rantai tiket palsu dan calo (tiket dipakai berulang).
+
+--------------------------------------------------------------------------------
+2. FITUR & FUNGSI UTAMA
+--------------------------------------------------------------------------------
+A. Login dan Registrasi Akun Berbasis Peran (Role-Based Access)
+   - Akun Pembeli (Buyer):
+     * Eksplorasi katalog konser lokal & internasional.
+     * Filter kategori, pencarian langsung (live search).
+     * Pemilihan tier tiket (VVIP, VIP, Festival Standing, Tribune).
+     * Checkout dan pembayaran secara nyata (simulasi payment gateway).
+     * Mengakses "Tiket Saya", melihat QR code e-ticket, mencetak ke PDF.
+   - Akun Penjual / Promotor (Seller):
+     * Menerbitkan konser baru dengan poster, tanggal, jam, venue, dan kota.
+     * Mengatur kategori tier tiket, harga per kategori, dan kuota awal.
+     * Memantau statistik omset penjualan, sisa kuota, dan transaksi tiket.
+   - Akun Super Admin:
+     * Mengelola semua konser (publikasi, verifikasi, hapus).
+     * Melihat rekapitulasi omset platform dan total tiket terjual.
+     * Menginspeksi log transaksi seluruh pembeli secara real-time.
+     * Memantau gerbang masuk (Gate Entry Logs).
+   - Mode Evaluasi Instan:
+     * Disediakan tombol Switcher Cepat di baris atas halaman untuk berpindah
+       antara Pembeli, Promotor, dan Admin tanpa perlu registrasi manual.
+
+B. Database (Penyimpanan Data Reaktif)
+   - Disimpan secara lokal di peramban (LocalStorage) yang persisten.
+   - Menyimpan daftar konser lokal (Sheila on 7, Hindia, Dewa 19, Bernadya)
+     dan konser internasional (Coldplay, Bruno Mars, Taylor Swift, Olivia Rodrigo).
+   - Menyimpan data kuota dan sisa stok tiket secara atomik (berkurang otomatis
+     saat transaksi berhasil).
+   - Menyimpan pesanan dan transaksi lengkap dengan nomor referensi unik.
+   - Menyimpan E-Tiket individual lengkap dengan nomor identitas (NIK/Passport),
+     nomor kursi, pintu gerbang, dan string QR Code berenkripsi.
+   - Tombol "Reset Data" tersedia untuk mengembalikan database ke kondisi awal.
+
+C. Payment Gateway (Pemrosesan Pembayaran Nyata / Real-Time)
+   - Integrasi simulator pembayaran multi-jalur:
+     1. QRIS Instant:
+        - Generate QR Code berstandar nasional (ASPI/BI).
+        - Hitung mundur timer 15 menit.
+        - Tombol simulasi konfirmasi instan dari m-Banking / e-wallet.
+     2. Virtual Account (BCA, Mandiri, BNI):
+        - Generate nomor VA 16 digit unik.
+        - Fitur salin ke clipboard dalam 1 klik.
+        - Petunjuk transfer m-banking.
+     3. Kartu Kredit / Debit Online:
+        - Format input otomatis 16 digit.
+        - Masa berlaku MM/YY & CVV.
+        - Proteksi standar 3D Secure.
+   - Efek suara pembayaran sukses (synthesized Web Audio harmonic chime).
+
+D. E-Ticket dan QR Code Digital
+   - Desain boarding pass eksklusif dengan strip hologram foil metalik beranimasi.
+   - Barcode dinamis & QR Code 2D resolusi tinggi menggunakan library QRCode.
+   - Menampilkan status tiket:
+     * 🟢 SAH / BELUM DIGUNAKAN
+     * 🟡 SUDAH DIGUNAKAN (CHECKED-IN)
+   - Tombol Cetak / Simpan PDF (dilengkapi print stylesheet rapi).
+   - Tombol "Uji Scan di Gate Scanner" untuk verifikasi langsung.
+
+E. Dashboard Admin & Penjual (Promotor)
+   - Statistik Widget: Total omset, total tiket terjual, sisa kuota, dan check-in.
+   - Tabel Log Transaksi: ID pesanan, nama pembeli, email, konser, total bayar,
+     metode pembayaran, dan waktu transaksi.
+   - Manajemen Konser: Tombol "+ Tambah Konser Baru" dan hapus konser.
+
+F. Verifikasi Tiket (Scanner Gerbang & Anti-Fraud)
+   - Antarmuka HUD Gerbang Stadion (Stadium Access Control).
+   - Pemilihan Pintu Masuk (Gate 1 VIP, Gate 2 Festival, Gate 3/4 Tribune).
+   - Mode Scanner Kamera / Barcode Detector dan Input Manual Kode Tiket.
+   - Menu Dropdown Uji Cepat untuk mengetes seluruh tiket yang tersimpan.
+   - Logika Validasi 3 Lapis:
+     1. Tiket Palsu / Tidak Terdaftar:
+        -> ❌ Akses Ditolak (Suara buzzer peringatan).
+     2. Tiket Sudah Digunakan (Duplicate Reused Screen):
+        -> ⚠️ Peringatan Calo: Tiket sudah pernah check-in sebelumnya pada jam
+           dan pintu tertentu (Mencegah tangkapan layar berulang).
+     3. Tiket Sah & Diverifikasi:
+        -> ✅ Akses Diberikan: Status langsung diubah menjadi "USED" di database,
+           pintu gerbang terbuka, dan suara konfirmasi ganda berbunyi.
+   - Tabel Riwayat Check-in Gate (Live scan log).
+
+--------------------------------------------------------------------------------
+3. STRUKTUR BERKAS PROYEK
+--------------------------------------------------------------------------------
+Tiketing/
+├── index.html            - Halaman utama platform SoundGate (UI & Modal)
+├── Project tiketing      - Dokumentasi lengkap & panduan sistem
+├── css/
+│   └── styles.css        - Desain Vanilla CSS Cyber Stadium, Glassmorphism & Print
+└── js/
+    ├── qrcode.min.js     - Generator QR Code murni JavaScript
+    ├── db.js             - Database engine, seed konser, orders, tickets, logs
+    ├── auth.js           - Role-based authentication & demo switcher
+    ├── payment.js        - Simulator payment gateway (QRIS, VA, Card)
+    ├── scanner.js        - Sistem verifikasi tiket anti-fraud & audio buzzer
+    └── app.js            - Controller antarmuka pengguna & navigasi SPA
+
+--------------------------------------------------------------------------------
+4. CARA MEMBUKA & MENGUJI WEBSITE
+--------------------------------------------------------------------------------
+1. Buka berkas `Tiketing/index.html` di peramban web modern apa pun (Chrome,
+   Edge, Firefox, Safari) atau melalui live preview dev server.
+2. Anda langsung dapat menelusuri katalog konser internasional dan lokal.
+3. Klik tombol "Beli Tiket" pada konser mana pun (misal: Coldplay / Sheila on 7).
+4. Pilih kategori tiket dan jumlah, lalu klik "Lanjut ke Pembayaran".
+5. Isi data penonton, pilih metode bayar (QRIS / Virtual Account / Kartu Kredit),
+   lalu klik tombol konfirmasi pembayaran.
+6. E-Ticket digital beranimasi hologram dengan QR Code langsung terbit!
+7. Klik tombol "Uji Scan di Gate Scanner" untuk membuktikan bahwa tiket tersebut
+   berhasil diverifikasi sebagai tiket SAH.
+8. Uji scan tiket yang sama untuk kedua kalinya untuk melihat deteksi anti-fraud
+   "TIKET SUDAH DIGUNAKAN" secara otomatis.
+================================================================================
